@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:expenseapp/models/expense.dart';
 import 'package:flutter/material.dart';
 
@@ -54,24 +52,40 @@ class _ExpensesPageState extends State<ExpensesPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-        const SizedBox(
-          height: 150,
-          child: Text("Grafik Bölümü"),
+    return Scaffold(
+      appBar: AppBar(
+        actions: [
+          Icon(
+            Icons.add,
+            color: Colors.amber,
+            size: 38,
+          ),
+        ],
+        title: Text("Expense App"),
+        titleTextStyle: TextStyle(
+          fontSize: 18,
+          color: Colors.amber,
         ),
-        Expanded(
-          child: ListView.builder(
-              itemCount: expenses.length,
-              itemBuilder: (context, index) {
-                return Text(expenses[index].name);
-              }),
-        ),
-        const SizedBox(
-          height: 150,
-          child: Text("Burası bottom bar."),
-        )
-      ]),
+      ),
+      body: Center(
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          const SizedBox(
+            height: 150,
+            child: Text("Grafik Bölümü"),
+          ),
+          Expanded(
+            child: ListView.builder(
+                itemCount: expenses.length,
+                itemBuilder: (context, index) {
+                  return Text(expenses[index].name);
+                }),
+          ),
+          const SizedBox(
+            height: 150,
+            child: Text("Burası bottom bar."),
+          )
+        ]),
+      ),
     );
   }
 }
