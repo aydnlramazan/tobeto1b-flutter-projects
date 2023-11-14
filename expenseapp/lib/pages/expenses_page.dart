@@ -13,44 +13,28 @@ class _ExpensesPageState extends State<ExpensesPage> {
   List<Expense> expenses = [
     Expense(name: "Yemek", price: 500, date: DateTime.now()),
     Expense(name: "Udemy Kursu", price: 200, date: DateTime.now()),
-    Expense(name: "Udemy Kursu", price: 200, date: DateTime.now()),
-    Expense(name: "Udemy Kursu", price: 200, date: DateTime.now()),
-    Expense(name: "Udemy Kursu", price: 200, date: DateTime.now()),
-    Expense(name: "Udemy Kursu", price: 200, date: DateTime.now()),
-    Expense(name: "Udemy Kursu", price: 200, date: DateTime.now()),
-    Expense(name: "Udemy Kursu", price: 200, date: DateTime.now()),
   ];
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        actions: [
-          Icon(
-            Icons.add,
-          ),
-        ],
-        title: Text("Expense App"),
-      ),
-      body: Center(
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          const SizedBox(
-            height: 150,
-            child: Text("Grafik Bölümü"),
-          ),
-          Expanded(
-            child: ListView.builder(
-                itemCount: expenses.length,
-                itemBuilder: (context, index) {
-                  return ExpenseItem(expenses[index]);
-                }),
-          ),
-          const SizedBox(
-            height: 150,
-            child: Text("Burası bottom bar."),
-          )
-        ]),
-      ),
+    return Center(
+      child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+        const SizedBox(
+          height: 150,
+          child: Text("Grafik Bölümü"),
+        ),
+        Expanded(
+          child: ListView.builder(
+              itemCount: expenses.length,
+              itemBuilder: (context, index) {
+                return ExpenseItem(expenses[index]);
+              }),
+        ),
+        const SizedBox(
+          height: 150,
+          child: Text("Burası bottom bar."),
+        )
+      ]),
     );
   }
 }
