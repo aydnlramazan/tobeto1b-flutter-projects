@@ -3,7 +3,13 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
+    MaterialApp(
+      theme: ThemeData(
+        appBarTheme: AppBarTheme(
+            backgroundColor: Colors.orange,
+            titleTextStyle: TextStyle(fontSize: 28, color: Colors.black),
+            iconTheme: IconThemeData(color: Colors.blue, size: 38)),
+      ),
       home: Scaffold(
         body: ExpensesPage(),
       ),

@@ -57,15 +57,9 @@ class _ExpensesPageState extends State<ExpensesPage> {
         actions: [
           Icon(
             Icons.add,
-            color: Colors.amber,
-            size: 38,
           ),
         ],
         title: Text("Expense App"),
-        titleTextStyle: TextStyle(
-          fontSize: 18,
-          color: Colors.amber,
-        ),
       ),
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
