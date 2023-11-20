@@ -3,10 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class ExpenseItem extends StatelessWidget {
-  //unnamed argument
   const ExpenseItem(this.expense, {Key? key}) : super(key: key);
   final Expense expense;
-
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -15,14 +13,18 @@ class ExpenseItem extends StatelessWidget {
         child: Column(
           children: [
             Text(expense.name),
+            const SizedBox(
+              height: 20,
+            ),
             Row(
-              //mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                    "${expense.price.toStringAsFixed(2)} ₺"), //string interpolation
-                const Spacer(), //kullanıldığında alabildiği tüm alanı kaplar!
-                //
-                Text(DateFormat.yMd().format(expense.date)), //TODO: Format Date
+                Text("₺${expense.price.toStringAsFixed(2)}"),
+                const Spacer(),
+                Icon(categoryIcons[expense.category]),
+                const SizedBox(
+                  width: 6,
+                ),
+                Text(DateFormat.yMd().format(expense.date)),
               ],
             )
           ],
@@ -31,10 +33,10 @@ class ExpenseItem extends StatelessWidget {
     );
   }
 }
-//y=> year
-  //M=> mount
-  //M=>minute
-  //H=>24 lük saat dilimde saat
-  //h=>12lik saat dilimde saat
-  //d=>day
-  //s=>second
+// y => yıl
+// M => ay
+// m => dakika
+// H => 24 saat sisteminde saat
+// h => 12 saat sisteminde saat
+// d => gün
+// s => saniye
